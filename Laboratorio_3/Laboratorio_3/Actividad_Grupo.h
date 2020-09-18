@@ -24,7 +24,6 @@ public:
 
 	void setResponsable(string r) override;
 	string getResponsable() override;
-	void setResponsableAuto() override;
 
 	void setDescripcion(string d) override;
 	string getDescripcion() override;
@@ -35,29 +34,16 @@ public:
 	void setFechaFinal(string f) override;
 	string getFechaFinal() override;
 
-	void setFechaRealInicio(string i) override;
-	string getFechaRealInicio() override;
-
-	void setFechaRealFin(string f) override;
-	string getFechaRealFin() override;
-
 	void eliminarSubActividad(string nombre);
-
-	void calcularFechaRealInicioFin();
-
-	void calcularFechaPlanInicioFin();
 
 private:
 
 	string responsable;
 
 	string nombre;
-	//Por ahora estoy poniendo las fechas como strings
 	//Se asume que el formato es YYYY-MM-DD
 	string fecha_plan_ini;
 	string fecha_plan_fin;
-	string fecha_real_ini;
-	string fecha_real_fin;
 
 	string descripcion;
 

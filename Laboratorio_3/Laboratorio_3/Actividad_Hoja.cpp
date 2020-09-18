@@ -1,15 +1,11 @@
 #include "Actividad_Hoja.h"
 
-
-//Una Actividad hoja siempre tiene que tener fechas para poder calcular la fecha real de las Actividades grupo.
-Actividad_Hoja::Actividad_Hoja(string planInicio, string planFin, string realInicio, string realFin)
+Actividad_Hoja::Actividad_Hoja()
 {
-	responsable = "";
+	responsable = "Jefe";
 	nombre = "";
-	fecha_plan_ini = planInicio;
-	fecha_plan_fin = planFin;
-	fecha_real_ini = realInicio;
-	fecha_real_fin = realFin;
+	fecha_plan_ini = "2020-09-18";
+	fecha_plan_fin = "2020-09-27";
 }
 
 Actividad_Hoja::~Actividad_Hoja()
@@ -55,22 +51,6 @@ string Actividad_Hoja::getResponsable()
 	return responsable;
 }
 
-void Actividad_Hoja::setResponsableAuto()
-{
-	if (padre != NULL)
-	{
-		if (!padre->getResponsable().empty())
-		{
-			responsable = padre->getResponsable();
-		}
-		else
-		{
-			padre->setResponsableAuto();
-			responsable = padre->getResponsable();
-		}
-	}
-}
-
 void Actividad_Hoja::setDescripcion(string d)
 {
 	descripcion = d;
@@ -99,24 +79,4 @@ void Actividad_Hoja::setFechaFinal(string f)
 string Actividad_Hoja::getFechaFinal()
 {
 	return fecha_plan_fin;
-}
-
-void Actividad_Hoja::setFechaRealInicio(string i)
-{
-	fecha_real_ini = i;
-}
-
-string Actividad_Hoja::getFechaRealInicio()
-{
-	return fecha_real_ini;
-}
-
-void Actividad_Hoja::setFechaRealFin(string f)
-{
-	fecha_real_fin = f;
-}
-
-string Actividad_Hoja::getFechaRealFin()
-{
-	return fecha_real_fin;
 }
