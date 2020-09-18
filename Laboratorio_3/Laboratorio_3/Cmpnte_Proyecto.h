@@ -21,7 +21,6 @@ public:
 
 	virtual void setResponsable(string r) = 0;
 	virtual string getResponsable() = 0;
-	virtual void setResponsableAuto() = 0;
 
 	virtual void setDescripcion(string d) = 0;
 	virtual string getDescripcion() = 0;
@@ -31,10 +30,4 @@ public:
 
 	virtual void setFechaFinal(string f) = 0;
 	virtual string getFechaFinal() = 0;
-
-	virtual void setFechaRealInicio(string i) = 0;
-	virtual string getFechaRealInicio() = 0;
-
-	virtual void setFechaRealFin(string f) = 0;
-	virtual string getFechaRealFin() = 0;
 };
