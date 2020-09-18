@@ -141,12 +141,20 @@
   <ItemGroup>
     <ClCompile Include="Actividad_Grupo.cpp" />
     <ClCompile Include="Actividad_Hoja.cpp" />
+    <ClCompile Include="Fabrica_Proyecto.cpp" />
+    <ClCompile Include="Fabrica_Proyecto_Complejo.cpp" />
+    <ClCompile Include="Fabrica_Proyecto_Simple.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Proyecto.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Actividad_Grupo.h" />
     <ClInclude Include="Actividad_Hoja.h" />
     <ClInclude Include="Cmpnte_Proyecto.h" />
+    <ClInclude Include="Fabrica_Proyecto.h" />
+    <ClInclude Include="Fabrica_Proyecto_Complejo.h" />
+    <ClInclude Include="Fabrica_Proyecto_Simple.h" />
+    <ClInclude Include="Proyecto.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

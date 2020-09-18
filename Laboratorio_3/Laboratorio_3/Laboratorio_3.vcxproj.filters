@@ -24,6 +24,18 @@
     <ClInclude Include="Cmpnte_Proyecto.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Proyecto.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Fabrica_Proyecto.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Fabrica_Proyecto_Simple.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Fabrica_Proyecto_Complejo.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -33,6 +45,18 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Actividad_Grupo.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Proyecto.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Fabrica_Proyecto.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Fabrica_Proyecto_Simple.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Fabrica_Proyecto_Complejo.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
