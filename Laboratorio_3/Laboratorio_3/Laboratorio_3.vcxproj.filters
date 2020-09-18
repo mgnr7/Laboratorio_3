@@ -15,7 +15,24 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Laboratorio_3.cpp">
+    <ClInclude Include="Actividad_Hoja.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Actividad_Grupo.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Cmpnte_Proyecto.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Actividad_Hoja.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Actividad_Grupo.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
