@@ -36,6 +36,15 @@
     <ClInclude Include="Fabrica_Proyecto_Complejo.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="SerializadorAbstracto.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SerializadorJSON.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SerializadorXML.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -57,6 +66,12 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Fabrica_Proyecto_Complejo.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SerializadorJSON.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SerializadorXML.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

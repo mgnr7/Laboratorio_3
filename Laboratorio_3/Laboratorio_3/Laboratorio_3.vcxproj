@@ -146,6 +146,8 @@
     <ClCompile Include="Fabrica_Proyecto_Simple.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Proyecto.cpp" />
+    <ClCompile Include="SerializadorXML.cpp" />
+    <ClCompile Include="SerializadorJSON.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Actividad_Grupo.h" />
@@ -155,6 +157,9 @@
     <ClInclude Include="Fabrica_Proyecto_Complejo.h" />
     <ClInclude Include="Fabrica_Proyecto_Simple.h" />
     <ClInclude Include="Proyecto.h" />
+    <ClInclude Include="SerializadorAbstracto.h" />
+    <ClInclude Include="SerializadorJSON.h" />
+    <ClInclude Include="SerializadorXML.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
