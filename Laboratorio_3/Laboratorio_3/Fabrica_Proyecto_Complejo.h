@@ -3,5 +3,8 @@
 class Fabrica_Proyecto_Complejo :
     public Fabrica_Proyecto
 {
+
+public: 
+    Proyecto* CrearProyecto() override;
 };
 

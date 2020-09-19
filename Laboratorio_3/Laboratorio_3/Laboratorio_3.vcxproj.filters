@@ -59,9 +59,6 @@
     <ClCompile Include="Proyecto.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Fabrica_Proyecto.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Fabrica_Proyecto_Simple.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
