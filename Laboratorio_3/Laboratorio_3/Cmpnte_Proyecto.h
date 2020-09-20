@@ -1,5 +1,7 @@
 #pragma once
 #include <string>
+#include <unordered_map>
+
 using namespace std;
 
 class Actividad_Grupo;
@@ -8,6 +10,7 @@ class Cmpnte_Proyecto
 {
 protected:
 	Actividad_Grupo* padre;
+	unordered_map< string, string > atributos;
 
 public:
 
@@ -30,4 +33,7 @@ public:
 
 	virtual void setFechaFinal(string f) = 0;
 	virtual string getFechaFinal() = 0;
+
+	virtual void obtAtributos(vector< pair< string, string > >& vectorValores) = 0;
+
 };

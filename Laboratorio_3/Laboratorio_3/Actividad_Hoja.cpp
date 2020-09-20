@@ -2,10 +2,18 @@
 
 Actividad_Hoja::Actividad_Hoja()
 {
+	atributos(5);
 	responsable = "Jefe";
 	nombre = "";
 	fecha_plan_ini = "2020-09-18";
 	fecha_plan_fin = "2020-09-27";
+	descripcion = "Descripción genérica";
+
+	atributos["Nombre"] = nombre ;
+	atributos["Responsable"] = responsable ;
+	atributos["Fecha Inicio"] = fecha_plan_ini ;
+	atributos["Fecha Fin"] = fecha_plan_fin;
+	atributos["Descripción"] = descripcion;
 }
 
 Actividad_Hoja::~Actividad_Hoja()
@@ -79,4 +87,16 @@ void Actividad_Hoja::setFechaFinal(string f)
 string Actividad_Hoja::getFechaFinal()
 {
 	return fecha_plan_fin;
+}
+
+void Actividad_Hoja::obtAtributos(vector<pair<string, string>>& vectorValores)
+{
+	vectorValores.resize(atributos.size());
+
+	int j = 0;
+	for (auto i : atributos)
+	{
+		vectorValores[j] = i;
+		j++;
+	}
 }

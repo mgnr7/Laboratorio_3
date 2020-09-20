@@ -2,10 +2,18 @@
 
 Actividad_Grupo::Actividad_Grupo()
 {
+	atributos(5);
 	responsable = "Jefe";
 	nombre = "";
 	fecha_plan_ini = "2020-09-18";
 	fecha_plan_fin = "2020-09-27";
+	descripcion = "Descripción genérica";
+
+	atributos["Nombre"] = nombre;
+	atributos["Responsable"] = responsable;
+	atributos["Fecha Inicio"] = fecha_plan_ini;
+	atributos["Fecha Fin"] = fecha_plan_fin;
+	atributos["Descripción"] = descripcion;
 }
 
 Actividad_Grupo::~Actividad_Grupo()
@@ -86,6 +94,18 @@ void Actividad_Grupo::setFechaFinal(string f)
 string Actividad_Grupo::getFechaFinal()
 {
 	return fecha_plan_fin;
+}
+
+void Actividad_Grupo::obtAtributos(vector<pair<string, string>>& vectorValores)
+{
+	vectorValores.resize(atributos.size());
+
+	int j = 0;
+	for (auto i : atributos)
+	{
+		vectorValores[j] = i;
+		j++;
+	}
 }
 
 void Actividad_Grupo::eliminarSubActividad(string nombre)

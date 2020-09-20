@@ -34,6 +34,8 @@ public:
 	void setFechaFinal(string f) override;
 	string getFechaFinal() override;
 
+	void obtAtributos(vector< pair< string, string > >& vectorValores) override;
+
 	void eliminarSubActividad(string nombre);
 
 private:
