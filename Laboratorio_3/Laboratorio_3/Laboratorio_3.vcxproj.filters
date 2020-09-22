@@ -45,6 +45,9 @@
     <ClInclude Include="SerializadorXML.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="TipoProyecto.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">

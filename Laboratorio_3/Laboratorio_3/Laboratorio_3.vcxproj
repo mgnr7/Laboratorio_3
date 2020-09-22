@@ -159,6 +159,7 @@
     <ClInclude Include="SerializadorAbstracto.h" />
     <ClInclude Include="SerializadorJSON.h" />
     <ClInclude Include="SerializadorXML.h" />
+    <ClInclude Include="TipoProyecto.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
