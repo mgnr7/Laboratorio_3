@@ -1,11 +1,10 @@
 #pragma once
-
 #include <sstream>
 using namespace std;
 
 #include "SerializadorAbstracto.h"
 
-class SerializadorXML : public ConstructorSerializadorAbstracto
+class SerializadorXML : public SerializadorAbstracto
 {
 public:
 	SerializadorXML();

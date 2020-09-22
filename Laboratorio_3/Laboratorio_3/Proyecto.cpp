@@ -11,7 +11,17 @@ Proyecto::~Proyecto()
 	delete estructuraActividades;
 }
 
-std::vector<std::string>* Proyecto::CrearEstructura(Fabrica_Proyecto* fp)
+vector<Cmpnte_Proyecto*>::iterator Proyecto::tareas_begin()
+{
+	return tareas.begin();
+}
+
+vector<Cmpnte_Proyecto*>::iterator Proyecto::tareas_end()
+{
+	return tareas.end();
+}
+
+vector<string>* Proyecto::CrearEstructura(Fabrica_Proyecto* fp)
 {
 	estructuraActividades = fp->CrearEstructura();
 	//Cmpnte_Proyecto* raiz = fp->CrearActividad();

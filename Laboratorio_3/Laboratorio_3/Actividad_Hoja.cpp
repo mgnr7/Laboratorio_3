@@ -1,17 +1,16 @@
 #include "Actividad_Hoja.h"
 
-Actividad_Hoja::Actividad_Hoja()
+Actividad_Hoja::Actividad_Hoja() : atributos(5)
 {
-	atributos(5);
 	responsable = "Jefe";
 	nombre = "";
 	fecha_plan_ini = "2020-09-18";
 	fecha_plan_fin = "2020-09-27";
 	descripcion = "Descripción genérica";
 
-	atributos["Nombre"] = nombre ;
-	atributos["Responsable"] = responsable ;
-	atributos["Fecha Inicio"] = fecha_plan_ini ;
+	atributos["Nombre"] = nombre;
+	atributos["Responsable"] = responsable;
+	atributos["Fecha Inicio"] = fecha_plan_ini;
 	atributos["Fecha Fin"] = fecha_plan_fin;
 	atributos["Descripción"] = descripcion;
 }
@@ -21,12 +20,12 @@ Actividad_Hoja::~Actividad_Hoja()
 	delete this->padre;
 }
 
-void Actividad_Hoja::setPadre(Actividad_Grupo* p)
+void Actividad_Hoja::setPadre(Cmpnte_Proyecto* p)
 {
 	this->padre = p;
 }
 
-Actividad_Grupo* Actividad_Hoja::getPadre()
+Cmpnte_Proyecto* Actividad_Hoja::getPadre()
 {
 	return padre;
 }
@@ -87,6 +86,14 @@ void Actividad_Hoja::setFechaFinal(string f)
 string Actividad_Hoja::getFechaFinal()
 {
 	return fecha_plan_fin;
+}
+
+void Actividad_Hoja::eliminarSubActividad(string nombre)
+{
+}
+
+void Actividad_Hoja::agregar(Cmpnte_Proyecto* actividad)
+{
 }
 
 void Actividad_Hoja::obtAtributos(vector<pair<string, string>>& vectorValores)

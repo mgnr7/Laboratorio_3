@@ -5,17 +5,19 @@
 #include <vector>
 #include "Proyecto.h"
 #include "SerializadorAbstracto.h"
+#include "Cmpnte_Proyecto.h"
+#include "Actividad_Hoja.h"
 
 void Serializar(Proyecto& p, SerializadorAbstracto& s) 
 {
 	vector< pair< string, string > > vectorValores;
 	vector < Cmpnte_Proyecto* >::iterator tareaIterator;
 
-	tareaIterator = p.tareas.begin();
+	tareaIterator = p.tareas_begin();
 
 	s.inicioObjeto((*tareaIterator)->getNombre());
 
-	for (tareaIterator = p.tareas.begin()+1; tareaIterator != p.tareas.end(); tareaIterator++)
+	for (tareaIterator = p.tareas_begin()+1; tareaIterator != p.tareas_end(); tareaIterator++)
 	{
 		(*tareaIterator)->obtAtributos(vectorValores);
 		
@@ -33,6 +35,7 @@ void Serializar(Proyecto& p, SerializadorAbstracto& s)
 
 int main()
 {
-
+	Actividad_Hoja a1;
+	a1.eliminarSubActividad("prueba");
 }
 

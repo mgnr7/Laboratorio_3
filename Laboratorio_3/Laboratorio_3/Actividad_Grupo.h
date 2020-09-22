@@ -2,6 +2,7 @@
 #include <string>
 #include <vector>
 #include <algorithm>
+#include <unordered_map>
 using namespace std;
 
 #include "Cmpnte_Proyecto.h"
@@ -12,10 +13,10 @@ public:
 	Actividad_Grupo();
 	virtual ~Actividad_Grupo();
 
-	void setPadre(Actividad_Grupo* p) override;
-	Actividad_Grupo* getPadre() override;
+	void setPadre(Cmpnte_Proyecto* p) override;
+	Cmpnte_Proyecto* getPadre() override;
 
-	void agregar(Cmpnte_Proyecto* actividad);
+	void agregar(Cmpnte_Proyecto* actividad) override;
 
 	void eliminar() override;
 
@@ -36,19 +37,10 @@ public:
 
 	void obtAtributos(vector< pair< string, string > >& vectorValores) override;
 
-	void eliminarSubActividad(string nombre);
+	void eliminarSubActividad(string nombre) override;
 
 private:
-
-	string responsable;
-
-	string nombre;
-	//Se asume que el formato es YYYY-MM-DD
-	string fecha_plan_ini;
-	string fecha_plan_fin;
-
-	string descripcion;
-
+	unordered_map< string, string > atributos;
 	vector < Cmpnte_Proyecto* > actividades;
 
 };

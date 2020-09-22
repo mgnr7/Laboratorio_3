@@ -1,8 +1,7 @@
 #include "Actividad_Grupo.h"
 
-Actividad_Grupo::Actividad_Grupo()
+Actividad_Grupo::Actividad_Grupo() : atributos(5)
 {
-	atributos(5);
 	responsable = "Jefe";
 	nombre = "";
 	fecha_plan_ini = "2020-09-18";
@@ -21,12 +20,12 @@ Actividad_Grupo::~Actividad_Grupo()
 	delete this->padre;
 }
 
-void Actividad_Grupo::setPadre(Actividad_Grupo* p)
+void Actividad_Grupo::setPadre(Cmpnte_Proyecto* p)
 {
 	this->padre = p;
 }
 
-Actividad_Grupo* Actividad_Grupo::getPadre()
+Cmpnte_Proyecto* Actividad_Grupo::getPadre()
 {
 	return padre;
 }

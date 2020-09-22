@@ -10,11 +10,14 @@ class Proyecto
 public:
 	Proyecto();
 	~Proyecto();
+	/*Para poder iterar el vector de tareas*/
+	vector< Cmpnte_Proyecto* >::iterator tareas_begin();
+	vector< Cmpnte_Proyecto* >::iterator tareas_end();
 
-	std::vector<std::string>* CrearEstructura(Fabrica_Proyecto* fp); //Define la estructura de las actividades, o en otras palabras, el tipo del proyecto.
+	vector<string>* CrearEstructura(Fabrica_Proyecto* fp); //Define la estructura de las actividades, o en otras palabras, el tipo del proyecto.
 
 private:
 	vector <Cmpnte_Proyecto*> tareas;
-	std::vector<std::string>* estructuraActividades; //Por ahora el tipo de actividad se maneja con string en vez de una clase por separado
+	vector<string>* estructuraActividades; //Por ahora el tipo de actividad se maneja con string en vez de una clase por separado
 };
 

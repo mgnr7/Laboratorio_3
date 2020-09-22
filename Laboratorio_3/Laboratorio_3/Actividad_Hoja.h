@@ -1,5 +1,6 @@
 #pragma once
 #include <string>
+#include <unordered_map>
 using namespace std;
 
 #include "Cmpnte_Proyecto.h"
@@ -11,8 +12,8 @@ public:
 	Actividad_Hoja();
 	virtual ~Actividad_Hoja();
 
-	void setPadre(Actividad_Grupo* p) override;
-	Actividad_Grupo* getPadre() override;
+	void setPadre(Cmpnte_Proyecto* p) override;
+	Cmpnte_Proyecto* getPadre() override;
 
 	void eliminar() override;
 
@@ -31,17 +32,11 @@ public:
 	void setFechaFinal(string f) override;
 	string getFechaFinal() override;
 
+	void eliminarSubActividad(string nombre) override;
+	void agregar(Cmpnte_Proyecto* actividad) override;
+
 	void obtAtributos(vector< pair< string, string > >& vectorValores) override;
 
 private:
-
-	string responsable;
-
-	string nombre;
-	//Se asume que el formato es YYYY-MM-DD
-	string fecha_plan_ini;
-	string fecha_plan_fin;
-
-	string descripcion;
-
+	unordered_map< string, string > atributos;
 };
