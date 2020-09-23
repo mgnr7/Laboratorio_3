@@ -1,4 +1,4 @@
-#include "TipoProyecto.h"
+#include "Tipo.h"
 
 Tipo::Tipo()
 {
@@ -8,12 +8,32 @@ Tipo::~Tipo()
 {
 }
 
-Tipo Tipo::obt_Tipo()
+void Tipo::set_Tipo_Sub_Actividad(Tipo* subAct)
 {
-	return Tipo();
+	sub_Actividad = subAct;
 }
 
-Tipo Tipo::tipo_sub_Actividad()
+Tipo* Tipo::tipo_sub_Actividad()
 {
-	return Tipo();
+	return sub_Actividad;
+}
+
+void Tipo::setNombre(string n)
+{
+	nombre = n;
+}
+
+string Tipo::getNombre()
+{
+	return nombre;
+}
+
+void Tipo::seCantNiveles(int c)
+{
+	cant_Niveles = c;
+}
+
+int Tipo::getCantNiveles()
+{
+	return cant_Niveles;
 }

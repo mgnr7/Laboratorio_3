@@ -35,7 +35,5 @@ void Serializar(Proyecto& p, SerializadorAbstracto& s)
 
 int main()
 {
-	Actividad_Hoja a1;
-	a1.eliminarSubActividad("prueba");
 }
 

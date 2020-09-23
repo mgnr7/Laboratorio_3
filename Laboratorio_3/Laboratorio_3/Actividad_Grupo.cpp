@@ -18,6 +18,17 @@ Actividad_Grupo::Actividad_Grupo() : atributos(5)
 Actividad_Grupo::~Actividad_Grupo()
 {
 	delete this->padre;
+	delete this->tipo;
+}
+
+void Actividad_Grupo::setTipo(Tipo* t)
+{
+	tipo = t;
+}
+
+Tipo* Actividad_Grupo::getTipo()
+{
+	return tipo;
 }
 
 void Actividad_Grupo::setPadre(Cmpnte_Proyecto* p)

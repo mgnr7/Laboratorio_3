@@ -18,6 +18,17 @@ Actividad_Hoja::Actividad_Hoja() : atributos(5)
 Actividad_Hoja::~Actividad_Hoja()
 {
 	delete this->padre;
+	delete this->tipo;
+}
+
+void Actividad_Hoja::setTipo(Tipo* t)
+{
+	tipo = t;
+}
+
+Tipo* Actividad_Hoja::getTipo()
+{
+	return tipo;
 }
 
 void Actividad_Hoja::setPadre(Cmpnte_Proyecto* p)
