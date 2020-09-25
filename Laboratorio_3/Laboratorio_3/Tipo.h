@@ -25,6 +25,4 @@ private:
 	int cant_Niveles;
 	string nombre;
 	Tipo* sub_Actividad;
-
-	vector<string> actvidades;
 };
