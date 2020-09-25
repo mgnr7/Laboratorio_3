@@ -34,54 +34,23 @@ void Serializar(Proyecto& p, SerializadorAbstracto& s)
 	cout << s.obtSerializacion() << endl;
 }
 
-/*Debe retornar un proyecto*/
-void crear_Proyecto() 
+
+void crear_proyecto(Tipo* tipo_proyecto) 
 {
 	bool ejecutar = true;
-	int cnt_niveles = 0;
 
 	while (ejecutar) 
 	{
-		cout << "Digite la cantidad de niveles del proyecto: ";
-		cin >> cnt_niveles;
-		if (cnt_niveles <= 0) 
-		{
-			cout << "La cantidad debe ser mayor a 0" << endl;
-		}
-		else 
-		{
-			/*Crear tipo con "cnt_niveles" niveles*/
-			/*Crear actiidadGrupo para la raiz*/
-			
-			vector<int> cnt_subAct;
-			int input = 0;
-
-			for (int n = 0; n < cnt_niveles; n++) 
-			{
-				cout << "Digite la cantidad de sub actividades para el nivel " + to_string(n+1) + ": ";
-				cin >> input;
-
-				cnt_subAct.push_back(input);
-
-			}
-
-			for (int i = 0; i < cnt_subAct.size(); i++)
-			{
-				/*Crear las actividades para cada nivel*/
-			}
-
-			ejecutar = false;
-		}
-	}
-
-
 	
 
+
+
+	}
 }
 
 
 int main()
 {
-	crear_Proyecto();
+	
 }
 

@@ -2,6 +2,8 @@
 
 Tipo::Tipo()
 {
+	cant_Niveles = 0;
+	sub_Actividad = nullptr;
 }
 
 Tipo::~Tipo()

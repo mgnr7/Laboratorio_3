@@ -1,5 +1,6 @@
 #pragma once
 #include <string>
+#include <vector>
 
 using namespace std;
 
@@ -18,8 +19,12 @@ public:
 	void seCantNiveles(int c);
 	int getCantNiveles();
 
+
+
 private:
 	int cant_Niveles;
 	string nombre;
 	Tipo* sub_Actividad;
+
+	vector<string> actvidades;
 };
