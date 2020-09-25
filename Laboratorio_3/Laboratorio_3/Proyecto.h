@@ -1,7 +1,6 @@
 #pragma once
 #include <vector>
 #include "Cmpnte_Proyecto.h"
-#include "Fabrica_Proyecto.h"
 
 using namespace std;
 
@@ -14,7 +13,6 @@ public:
 	vector< Cmpnte_Proyecto* >::iterator tareas_begin();
 	vector< Cmpnte_Proyecto* >::iterator tareas_end();
 
-	vector<string>* CrearEstructura(Fabrica_Proyecto* fp); //Define la estructura de las actividades, o en otras palabras, el tipo del proyecto.
 
 private:
 	vector <Cmpnte_Proyecto*> tareas;
