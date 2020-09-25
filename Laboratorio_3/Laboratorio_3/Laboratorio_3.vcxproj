@@ -141,6 +141,7 @@
   <ItemGroup>
     <ClCompile Include="Actividad_Grupo.cpp" />
     <ClCompile Include="Actividad_Hoja.cpp" />
+    <ClCompile Include="Controlador_Tipo.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Proyecto.cpp" />
     <ClCompile Include="SerializadorXML.cpp" />
@@ -151,6 +152,7 @@
     <ClInclude Include="Actividad_Grupo.h" />
     <ClInclude Include="Actividad_Hoja.h" />
     <ClInclude Include="Cmpnte_Proyecto.h" />
+    <ClInclude Include="Controlador_Tipo.h" />
     <ClInclude Include="Proyecto.h" />
     <ClInclude Include="SerializadorAbstracto.h" />
     <ClInclude Include="SerializadorJSON.h" />
