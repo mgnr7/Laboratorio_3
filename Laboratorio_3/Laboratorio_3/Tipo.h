@@ -1,6 +1,8 @@
 #pragma once
 #include <string>
 #include <vector>
+#include "Tipo_Actividad.h"
+#include <iostream>
 
 using namespace std;
 
@@ -19,10 +21,18 @@ public:
 	void seCantNiveles(int c);
 	int getCantNiveles();
 
+	void agregarNivel(string nombreActividad);
+	void eliminarNivel();
+	Tipo_Actividad* operator[](int i);
+
+	void imprimirEstructura();
+	friend std::ostream& operator<<(std::ostream& os, const Tipo& tp);
+
 
 
 private:
 	int cant_Niveles;
 	string nombre;
 	Tipo* sub_Actividad;
+	vector<Tipo_Actividad*> estructura;
 };

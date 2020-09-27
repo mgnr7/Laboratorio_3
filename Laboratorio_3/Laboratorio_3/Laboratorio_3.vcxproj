@@ -147,6 +147,7 @@
     <ClCompile Include="SerializadorXML.cpp" />
     <ClCompile Include="SerializadorJSON.cpp" />
     <ClCompile Include="Tipo.cpp" />
+    <ClCompile Include="Tipo_Actividad.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Actividad_Grupo.h" />
@@ -158,6 +159,7 @@
     <ClInclude Include="SerializadorJSON.h" />
     <ClInclude Include="SerializadorXML.h" />
     <ClInclude Include="Tipo.h" />
+    <ClInclude Include="Tipo_Actividad.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
