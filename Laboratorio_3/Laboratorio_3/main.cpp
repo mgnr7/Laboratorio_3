@@ -36,13 +36,14 @@ void Serializar(Proyecto& p, SerializadorAbstracto& s)
 }
 
 
-void crear_proyecto(Tipo* tipo_proyecto) 
+void crear_proyecto(Tipo* tipo_proyecto)  //Metodo Fabricante
 {
 	bool ejecutar = true;
-
+	string respuesta;
+	cout << "Digite el nombre del nuevo proyecto de tipo " << tipo_proyecto->getNombre() << ":" << endl;
+	cin >> respuesta;
 	while (ejecutar) 
 	{
-	
 
 
 
@@ -69,7 +70,7 @@ int main()
 
 	//lista los tipos de proyectos que estan almacenados en el controlador
 	controlador.listarTipos();
-	//controlador.consultarTipo("No existo");
+	crear_proyecto(controlador.obtenerTipo("Simple"));
 
 }
 

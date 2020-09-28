@@ -1,6 +1,7 @@
 #pragma once
 #include <vector>
 #include "Cmpnte_Proyecto.h"
+#include "Tipo.h"
 
 using namespace std;
 
@@ -13,9 +14,13 @@ public:
 	vector< Cmpnte_Proyecto* >::iterator tareas_begin();
 	vector< Cmpnte_Proyecto* >::iterator tareas_end();
 
+	void setRaiz(Cmpnte_Proyecto* raiz);
+	Cmpnte_Proyecto* getRaiz();
+
 
 private:
 	vector <Cmpnte_Proyecto*> tareas;
-	vector<string>* estructuraActividades; //Por ahora el tipo de actividad se maneja con string en vez de una clase por separado
+	Cmpnte_Proyecto* tareaRaiz;
+	Tipo* tipoProyecto;
 };
 

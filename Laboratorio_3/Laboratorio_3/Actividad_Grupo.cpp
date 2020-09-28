@@ -21,12 +21,12 @@ Actividad_Grupo::~Actividad_Grupo()
 	delete this->tipo;
 }
 
-void Actividad_Grupo::setTipo(Tipo* t)
+void Actividad_Grupo::setTipo(Tipo_Actividad* t)
 {
 	tipo = t;
 }
 
-Tipo* Actividad_Grupo::getTipo()
+Tipo_Actividad* Actividad_Grupo::getTipo()
 {
 	return tipo;
 }

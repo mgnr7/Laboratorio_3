@@ -12,8 +12,8 @@ public:
 	Actividad_Hoja();
 	virtual ~Actividad_Hoja();
 
-	void setTipo(Tipo* t) override;
-	Tipo* getTipo() override;
+	void setTipo(Tipo_Actividad* t) override;
+	Tipo_Actividad* getTipo() override;
 
 	void setPadre(Cmpnte_Proyecto* p) override;
 	Cmpnte_Proyecto* getPadre() override;

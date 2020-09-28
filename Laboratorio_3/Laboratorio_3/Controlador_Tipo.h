@@ -17,6 +17,7 @@ public:
 
 	void consultarTipo(std::string nombreTipo);
 	void listarTipos();//Despliega todos los tipos de proyectos que esten almacenados en le controlador
+	Tipo* obtenerTipo(std::string nombreTipo);
 
 
 

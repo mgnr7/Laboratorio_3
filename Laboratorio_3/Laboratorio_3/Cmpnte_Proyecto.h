@@ -1,6 +1,6 @@
 #pragma once
 #include <string>
-#include "Tipo.h"
+#include "Tipo_Actividad.h"
 
 using namespace std;
 
@@ -19,12 +19,12 @@ protected:
 	string fecha_plan_fin;
 	string descripcion;
 
-	Tipo* tipo;
+	Tipo_Actividad* tipo;
 
 public:
 
-	virtual void setTipo(Tipo* t) = 0;
-	virtual Tipo* getTipo() = 0;
+	virtual void setTipo(Tipo_Actividad* t) = 0;
+	virtual Tipo_Actividad* getTipo() = 0;
 
 	virtual void setPadre(Cmpnte_Proyecto* p) = 0;
 	virtual Cmpnte_Proyecto* getPadre() = 0;

@@ -13,8 +13,8 @@ public:
 	Actividad_Grupo();
 	virtual ~Actividad_Grupo();
 
-	void setTipo(Tipo* t) override;
-	Tipo* getTipo() override;
+	void setTipo(Tipo_Actividad* t) override;
+	Tipo_Actividad* getTipo() override;
 
 	void setPadre(Cmpnte_Proyecto* p) override;
 	Cmpnte_Proyecto* getPadre() override;

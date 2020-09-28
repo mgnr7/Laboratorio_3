@@ -100,3 +100,8 @@ void Controlador_Tipo::listarTipos()
 		cout << "No hay ningún tipo de proyecto almacenado." << endl;
 	}
 }
+
+Tipo* Controlador_Tipo::obtenerTipo(std::string nombreTipo)
+{
+	return buscarTipo(nombreTipo);
+}

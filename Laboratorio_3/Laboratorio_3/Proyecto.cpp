@@ -2,13 +2,11 @@
 
 Proyecto::Proyecto()
 {
-	estructuraActividades = nullptr;
 }
 
 Proyecto::~Proyecto()
 {
 	tareas.clear();
-	delete estructuraActividades;
 }
 
 vector<Cmpnte_Proyecto*>::iterator Proyecto::tareas_begin()
@@ -19,5 +17,15 @@ vector<Cmpnte_Proyecto*>::iterator Proyecto::tareas_begin()
 vector<Cmpnte_Proyecto*>::iterator Proyecto::tareas_end()
 {
 	return tareas.end();
+}
+
+void Proyecto::setRaiz(Cmpnte_Proyecto* raiz)
+{
+	this->tareaRaiz = raiz;
+}
+
+Cmpnte_Proyecto* Proyecto::getRaiz()
+{
+	return tareaRaiz;
 }
 
