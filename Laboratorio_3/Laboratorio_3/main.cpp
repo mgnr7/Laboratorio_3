@@ -5,6 +5,8 @@
 #include <vector>
 #include "Proyecto.h"
 #include "SerializadorAbstracto.h"
+#include "SerializadorJSON.h"
+#include "SerializadorXML.h"
 #include "Cmpnte_Proyecto.h"
 #include "Actividad_Hoja.h"
 #include "Actividad_Grupo.h"
@@ -13,16 +15,25 @@
 #include "Tipo_Actividad.h"
 #include <queue>
 
-void Serializar(Proyecto& p, SerializadorAbstracto& s) 
+void Serializar(Proyecto* p, SerializadorAbstracto& s) 
 {
 	vector< pair< string, string > > vectorValores;
 	vector < Cmpnte_Proyecto* >::iterator tareaIterator;
 
-	tareaIterator = p.tareas_begin();
+	tareaIterator = p->tareas_begin();
 
 	s.inicioObjeto((*tareaIterator)->getNombre());
+	(*tareaIterator)->obtAtributos(vectorValores);
 
-	for (tareaIterator = p.tareas_begin()+1; tareaIterator != p.tareas_end(); tareaIterator++)
+	for (auto v : vectorValores)
+	{
+		s.serializarString(v);
+	}
+
+	vectorValores.clear();
+
+
+	for (tareaIterator = p->tareas_begin()+1; tareaIterator != p->tareas_end(); tareaIterator++)
 	{
 		(*tareaIterator)->obtAtributos(vectorValores);
 		
@@ -69,6 +80,7 @@ Proyecto* crear_proyecto(Tipo* tipo_proyecto)  //Metodo Fabricante
 		Tipo_Actividad* tipoActividadActual = componenteActual->getTipo();
 		Tipo_Actividad* tipoActividadSiguiente = tipo_proyecto->siguienteActividad(tipoActividadActual);
 		Cmpnte_Proyecto* nuevoComponente;
+		proyectoNuevo->agregarTarea(componenteActual);
 		colaArbol.pop();
 
 		cout << "¿Cuantas actividades de tipo '" << (tipo_proyecto->siguienteActividad(tipoActividadActual))->getNombre() << "' quiere crear para la actividad llamada '" << componenteActual->getNombre() << "'?:";
@@ -94,6 +106,7 @@ Proyecto* crear_proyecto(Tipo* tipo_proyecto)  //Metodo Fabricante
 			cin >> respuesta;
 			nuevoComponente->setDescripcion(respuesta);
 
+			
 		}
 	}
 
@@ -144,6 +157,12 @@ int main()
 	
 	}
 	
-
+	if (!proyectosAlmacenados.empty()) 
+	{
+		SerializadorJSON sJson;
+		vector < Proyecto* >::iterator proyectIterator;
+		proyectIterator = proyectosAlmacenados.begin();
+		Serializar((*proyectIterator), sJson);
+	}
 }
 

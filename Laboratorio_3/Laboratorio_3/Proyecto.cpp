@@ -19,6 +19,11 @@ vector<Cmpnte_Proyecto*>::iterator Proyecto::tareas_end()
 	return tareas.end();
 }
 
+void Proyecto::agregarTarea(Cmpnte_Proyecto* tarea)
+{
+	tareas.push_back(tarea);
+}
+
 void Proyecto::setRaiz(Cmpnte_Proyecto* raiz)
 {
 	this->tareaRaiz = raiz;

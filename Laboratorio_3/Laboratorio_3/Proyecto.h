@@ -14,6 +14,8 @@ public:
 	/*Para poder iterar el vector de tareas*/
 	vector< Cmpnte_Proyecto* >::iterator tareas_begin();
 	vector< Cmpnte_Proyecto* >::iterator tareas_end();
+	void agregarTarea(Cmpnte_Proyecto* tarea);
+
 
 	void setRaiz(Cmpnte_Proyecto* raiz);
 	Cmpnte_Proyecto* getRaiz();
