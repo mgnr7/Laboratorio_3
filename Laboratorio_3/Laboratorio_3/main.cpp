@@ -53,10 +53,10 @@ Proyecto* crear_proyecto(Tipo* tipo_proyecto)  //Metodo Fabricante
 	//Primero le pide al usuario los detalles de la raiz del proyecto
 	Actividad_Grupo* raizProyecto = new Actividad_Grupo();
 	raizProyecto->setTipo((*tipo_proyecto)[0]); // Genera la raiz del proyecto basado en el primer componente de la estructura del tipo (i.e "Proyecto")
-	cout << "Escriba un nombre para la actividad raiz: ";
+	cout << "Escriba un nombre para la actividad raiz (tipo '"<< (*tipo_proyecto)[0]->getNombre()<<"'): ";
 	cin >> respuesta;
 	raizProyecto->setNombre(respuesta);
-	cout << "Escriba una descripción para la actividad raiz: ";
+	cout << "Escriba una descripción para la actividad raiz (tipo '" << (*tipo_proyecto)[0]->getNombre() << "'): ";
 	cin >> respuesta;
 	raizProyecto->setDescripcion(respuesta);
 	proyectoNuevo->setRaiz(raizProyecto);
