@@ -36,41 +36,66 @@ void Serializar(Proyecto& p, SerializadorAbstracto& s)
 }
 
 
-void crear_proyecto(Tipo* tipo_proyecto)  //Metodo Fabricante
+Proyecto* crear_proyecto(Tipo* tipo_proyecto)  //Metodo Fabricante
 {
 	bool ejecutar = true;
 	string respuesta;
+	int nivelActual;
+		
+	Proyecto* proyectoNuevo = new Proyecto();
 	cout << "Digite el nombre del nuevo proyecto de tipo " << tipo_proyecto->getNombre() << ":" << endl;
 	cin >> respuesta;
-	while (ejecutar) 
-	{
+	proyectoNuevo->setNombre(respuesta);
+
+	Actividad_Grupo* raizProyecto = new Actividad_Grupo();
+	raizProyecto->setTipo((*tipo_proyecto)[0]); // Genera la raiz del proyecto basado en el primer componente de la estructura del tipo (i.e "Proyecto")
+	proyectoNuevo->setRaiz(new Actividad_Grupo()); 
 
 
-
-	}
+	return proyectoNuevo;
 }
 
 
 int main()
 {
 	Controlador_Tipo controlador;
+	vector<Proyecto*> proyectosAlmacenados;
 
 	//Crea el tipo de proyecto simple
 	controlador.crearTipo("Simple"); 
 	controlador.agregarNivelTipo("Simple", "Proyecto");
 	controlador.agregarNivelTipo("Simple", "Tarea");
-	controlador.consultarTipo("Simple");
+	//controlador.consultarTipo("Simple");
 
 	//Crea el tipo de proyecto complejo
 	controlador.crearTipo("Complejo");
 	controlador.agregarNivelTipo("Complejo", "Proyecto");
 	controlador.agregarNivelTipo("Complejo", "Fase");
 	controlador.agregarNivelTipo("Complejo", "Tarea");
-	controlador.consultarTipo("Complejo");
+	//controlador.consultarTipo("Complejo");
 
-	//lista los tipos de proyectos que estan almacenados en el controlador
-	controlador.listarTipos();
-	crear_proyecto(controlador.obtenerTipo("Simple"));
+
+	// Parte donde interactua con el usuario
+	bool ejecutar = true;
+	int seleccion;
+	string respuesta;
+	
+	while (ejecutar) { 
+		controlador.listarTipos();
+		cout << "Escriba el nombre del tipo del proyecto nuevo: ";
+		cin >> respuesta;
+		Tipo* tipo = controlador.obtenerTipo(respuesta);
+		if (tipo != nullptr)
+		{
+			proyectosAlmacenados.push_back(crear_proyecto(tipo));
+			ejecutar = false;
+		}
+		else {
+			cout << "El tipo escrito no existe." << endl;
+		}
+	
+	}
+	
 
 }
 

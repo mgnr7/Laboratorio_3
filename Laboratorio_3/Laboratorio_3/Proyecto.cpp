@@ -29,3 +29,13 @@ Cmpnte_Proyecto* Proyecto::getRaiz()
 	return tareaRaiz;
 }
 
+void Proyecto::setNombre(string nombre)
+{
+	this->nombre = nombre;
+}
+
+string Proyecto::getNombre()
+{
+	return this->nombre;
+}
+
