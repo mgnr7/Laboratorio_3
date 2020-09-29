@@ -70,6 +70,25 @@ Tipo_Actividad* Tipo::operator[](int i)
 
 }
 
+Tipo_Actividad* Tipo::siguienteActividad(Tipo_Actividad* actividadActual)
+{
+	Tipo_Actividad* siguiente = nullptr;
+	for (auto itr = estructura.begin(); itr != estructura.end(); ++itr) {
+		if (*itr == actividadActual) {
+			++itr;
+			if (itr != estructura.end()) {
+				siguiente = *itr;
+			}
+		}
+	}
+	return siguiente;
+}
+
+int Tipo::getTamano()
+{
+	return estructura.size();
+}
+
 void Tipo::imprimirEstructura()
 {
 	cout << "Estructura del tipo de proyecto " << this->getNombre() << ":" << endl;

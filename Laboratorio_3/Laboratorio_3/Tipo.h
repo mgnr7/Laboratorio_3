@@ -24,6 +24,8 @@ public:
 	void agregarNivel(string nombreActividad);
 	void eliminarNivel();
 	Tipo_Actividad* operator[](int i);
+	Tipo_Actividad* siguienteActividad(Tipo_Actividad* actividadActual);
+	int getTamano();
 
 	void imprimirEstructura();
 	friend std::ostream& operator<<(std::ostream& os, const Tipo& tp);

@@ -9,12 +9,12 @@ Tipo_Actividad::~Tipo_Actividad()
 {
 }
 
-inline void Tipo_Actividad::setNombre(std::string nombre)
+ void Tipo_Actividad::setNombre(std::string nombre)
 {
 	this->nombre = nombre;
 }
 
-inline std::string Tipo_Actividad::getNombre()
+ std::string Tipo_Actividad::getNombre()
 {
 	return this->nombre;
 }

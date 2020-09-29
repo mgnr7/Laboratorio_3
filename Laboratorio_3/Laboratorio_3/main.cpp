@@ -10,6 +10,8 @@
 #include "Actividad_Grupo.h"
 #include "Tipo.h"
 #include "Controlador_Tipo.h"
+#include "Tipo_Actividad.h"
+#include <queue>
 
 void Serializar(Proyecto& p, SerializadorAbstracto& s) 
 {
@@ -38,19 +40,65 @@ void Serializar(Proyecto& p, SerializadorAbstracto& s)
 
 Proyecto* crear_proyecto(Tipo* tipo_proyecto)  //Metodo Fabricante
 {
+	queue<Cmpnte_Proyecto*> colaArbol;
 	bool ejecutar = true;
 	string respuesta;
-	int nivelActual;
+	int respuesta_int;
 		
 	Proyecto* proyectoNuevo = new Proyecto();
 	cout << "Digite el nombre del nuevo proyecto de tipo " << tipo_proyecto->getNombre() << ":" << endl;
 	cin >> respuesta;
 	proyectoNuevo->setNombre(respuesta);
 
+	//Primero le pide al usuario los detalles de la raiz del proyecto
 	Actividad_Grupo* raizProyecto = new Actividad_Grupo();
 	raizProyecto->setTipo((*tipo_proyecto)[0]); // Genera la raiz del proyecto basado en el primer componente de la estructura del tipo (i.e "Proyecto")
-	proyectoNuevo->setRaiz(new Actividad_Grupo()); 
+	cout << "Escriba un nombre para la actividad raiz: ";
+	cin >> respuesta;
+	raizProyecto->setNombre(respuesta);
+	cout << "Escriba una descripción para la actividad raiz: ";
+	cin >> respuesta;
+	raizProyecto->setDescripcion(respuesta);
+	proyectoNuevo->setRaiz(raizProyecto);
 
+	colaArbol.push(raizProyecto);
+
+	//Ahora el usuario pobla los siguientes niveles del arbol
+	while (!colaArbol.empty()) {
+		Cmpnte_Proyecto* componenteActual = colaArbol.front();
+		Tipo_Actividad* tipoActividadActual = componenteActual->getTipo();
+		Tipo_Actividad* tipoActividadSiguiente = tipo_proyecto->siguienteActividad(tipoActividadActual);
+		Cmpnte_Proyecto* nuevoComponente;
+		colaArbol.pop();
+
+		cout << "¿Cuantas actividades de tipo '" << (tipo_proyecto->siguienteActividad(tipoActividadActual))->getNombre() << "' quiere crear para la actividad llamada '" << componenteActual->getNombre() << "'?:";
+		cin >> respuesta;
+		int contador = stoi(respuesta);
+		for (int i = 0; i < contador; i++) {
+			
+			if (tipo_proyecto->siguienteActividad(tipoActividadSiguiente) != nullptr) { //Es para saber si la nueva actividad es una hoja o no
+				nuevoComponente = new Actividad_Grupo();
+				colaArbol.push(nuevoComponente);
+			}
+			else {
+				nuevoComponente = new Actividad_Hoja();
+			}
+			nuevoComponente->setTipo(tipoActividadSiguiente);
+			nuevoComponente->setPadre(componenteActual);
+
+			cout << "Escriba un nombre para la nueva actividad de tipo '" << (tipo_proyecto->siguienteActividad(tipoActividadActual))->getNombre() << "':";
+			cin >> respuesta;
+			nuevoComponente->setNombre(respuesta);
+
+			cout << "Escriba una descripción para la nueva actividad de tipo '" << (tipo_proyecto->siguienteActividad(tipoActividadActual))->getNombre() << "':";
+			cin >> respuesta;
+			nuevoComponente->setDescripcion(respuesta);
+
+		}
+	}
+
+
+	//cout << proyectoNuevo->getRaiz()->getNombre();
 
 	return proyectoNuevo;
 }
