@@ -1,6 +1,6 @@
 #pragma once
 #include <string>
-//#include "Propiedad"
+#include "Propiedad.h"
 #include <vector>
 
 using namespace std;
@@ -13,7 +13,7 @@ protected:
 
 public:
 
-	virtual void agregarPropiedad(Propiedad& p) = 0;
+	virtual void agregarPropiedad(Propiedad* p) = 0;
 	virtual void eliminarPropiedad(string nombrePropiedad) = 0;
 	virtual void modificarPropiedadNombre(string nombrePropiedad, string nuevoNombre) = 0;
 	virtual void modificarPropiedadTipo(string nombrePropiedad, string nuevoTipo) = 0;
