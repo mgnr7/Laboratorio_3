@@ -139,18 +139,22 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="EntidadCompuesta.cpp" />
     <ClCompile Include="ControladorRelaciones.cpp" />
     <ClCompile Include="EntidadSimple.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Propiedad.cpp" />
     <ClCompile Include="Relacion.cpp" />
+    <ClCompile Include="SerializadorJSON.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ControladorRelaciones.h" />
     <ClInclude Include="EntidadAbstracta.h" />
+    <ClInclude Include="EntidadCompuesta.h" />
     <ClInclude Include="EntidadSimple.h" />
     <ClInclude Include="Propiedad.h" />
     <ClInclude Include="Relacion.h" />
+    <ClInclude Include="SerializadorJSON.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

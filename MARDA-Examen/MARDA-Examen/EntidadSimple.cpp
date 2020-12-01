@@ -12,10 +12,16 @@ EntidadSimple::EntidadSimple(string nombre)
 
 EntidadSimple::~EntidadSimple()
 {
-	for (auto itr = this->propiedades.begin(); itr != this->propiedades.end(); itr++) {
-		delete* itr;
-	}
-	this->propiedadespropiedades.clear();
+}
+
+void EntidadSimple::setNombre(string nombre)
+{
+	this->nombre = nombre;
+}
+
+string EntidadSimple::getNombre()
+{
+	return this->nombre;
 }
 
 void EntidadSimple::agregarPropiedad(Propiedad* p)
@@ -26,7 +32,7 @@ void EntidadSimple::agregarPropiedad(Propiedad* p)
 void EntidadSimple::eliminarPropiedad(string nombrePropiedad)
 {
 	for (auto itr = this->propiedades.begin(); itr != this->propiedades.end(); itr++) {
-		if ((*itr)->getNombre == nombrePropiedad) 
+		if ((*itr)->getNombre() == nombrePropiedad)
 		{
 			this->propiedades.erase(itr);
 			itr = this->propiedades.end();
@@ -37,7 +43,7 @@ void EntidadSimple::eliminarPropiedad(string nombrePropiedad)
 void EntidadSimple::modificarPropiedadNombre(string nombrePropiedad, string nuevoNombre)
 {
 	for (auto itr = this->propiedades.begin(); itr != this->propiedades.end(); itr++) {
-		if ((*itr)->getNombre == nombrePropiedad)
+		if ((*itr)->getNombre() == nombrePropiedad)
 		{
 			(*itr)->setNombre(nuevoNombre);
 			itr = this->propiedades.end();
@@ -48,7 +54,7 @@ void EntidadSimple::modificarPropiedadNombre(string nombrePropiedad, string nuev
 void EntidadSimple::modificarPropiedadTipo(string nombrePropiedad, string nuevoTipo)
 {
 	for (auto itr = this->propiedades.begin(); itr != this->propiedades.end(); itr++) {
-		if ((*itr)->getNombre == nombrePropiedad)
+		if ((*itr)->getNombre() == nombrePropiedad)
 		{
 			(*itr)->setTipo(nuevoTipo);
 			itr = this->propiedades.end();
@@ -59,10 +65,20 @@ void EntidadSimple::modificarPropiedadTipo(string nombrePropiedad, string nuevoT
 void EntidadSimple::modificarPropiedadValor(string nombrePropiedad, string nuevoValor)
 {
 	for (auto itr = this->propiedades.begin(); itr != this->propiedades.end(); itr++) {
-		if ((*itr)->getNombre == nombrePropiedad)
+		if ((*itr)->getNombre() == nombrePropiedad)
 		{
 			(*itr)->setValor(nuevoValor);
 			itr = this->propiedades.end();
 		}
 	}
+}
+
+vector< Propiedad* >::iterator EntidadSimple::begin()
+{
+	return propiedades.begin();
+}
+
+vector< Propiedad* >::iterator EntidadSimple::end()
+{
+	return propiedades.end();
 }

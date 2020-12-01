@@ -9,14 +9,19 @@ class EntidadAbstracta
 {
 protected:
 	string nombre;
-	vector< Propiedad* > propiedades
+	vector< Propiedad* > propiedades;
 
 public:
 
+	virtual void setNombre(string nombre) = 0;
+	virtual string getNombre() = 0;
 	virtual void agregarPropiedad(Propiedad* p) = 0;
 	virtual void eliminarPropiedad(string nombrePropiedad) = 0;
 	virtual void modificarPropiedadNombre(string nombrePropiedad, string nuevoNombre) = 0;
 	virtual void modificarPropiedadTipo(string nombrePropiedad, string nuevoTipo) = 0;
 	virtual void modificarPropiedadValor(string nombrePropiedad, string nuevoValor) = 0;
+
+	virtual vector< Propiedad* >::iterator begin() = 0;
+	virtual vector< Propiedad* >::iterator end() = 0;
 
 };
