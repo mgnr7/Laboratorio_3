@@ -139,12 +139,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="EntidadCompuesta.cpp" />
     <ClCompile Include="EntidadSimple.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Propiedad.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="EntidadAbstracta.h" />
+    <ClInclude Include="EntidadCompuesta.h" />
     <ClInclude Include="EntidadSimple.h" />
     <ClInclude Include="Propiedad.h" />
   </ItemGroup>

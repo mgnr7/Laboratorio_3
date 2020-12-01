@@ -1,13 +1,16 @@
 #pragma once
 #include "EntidadAbstracta.h"
 
-class EntidadSimple : public EntidadAbstracta 
+class EntidadCompuesta : public EntidadAbstracta
 {
+private:
+	vector<EntidadAbstracta* > entidades;
+
 public:
 
-	EntidadSimple();
-	EntidadSimple(string nombre);
-	~EntidadSimple();
+	EntidadCompuesta();
+	EntidadCompuesta(string nombre);
+	~EntidadCompuesta();
 
 	void setNombre(string nombre) override;
 	string getNombre() override;
@@ -16,4 +19,7 @@ public:
 	void modificarPropiedadNombre(string nombrePropiedad, string nuevoNombre) override;
 	void modificarPropiedadTipo(string nombrePropiedad, string nuevoTipo) override;
 	void modificarPropiedadValor(string nombrePropiedad, string nuevoValor) override;
+
+	void agregarEntidad(EntidadAbstracta* entidad);
+	void eliminarEntidad(string nombre);
 };
