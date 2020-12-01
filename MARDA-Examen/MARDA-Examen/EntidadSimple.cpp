@@ -12,10 +12,6 @@ EntidadSimple::EntidadSimple(string nombre)
 
 EntidadSimple::~EntidadSimple()
 {
-	for (auto itr = this->propiedades.begin(); itr != this->propiedades.end(); itr++) {
-		delete* itr;
-	}
-	this->propiedades.clear();
 }
 
 void EntidadSimple::setNombre(string nombre)
@@ -75,4 +71,14 @@ void EntidadSimple::modificarPropiedadValor(string nombrePropiedad, string nuevo
 			itr = this->propiedades.end();
 		}
 	}
+}
+
+vector< Propiedad* >::iterator EntidadSimple::begin()
+{
+	return propiedades.begin();
+}
+
+vector< Propiedad* >::iterator EntidadSimple::end()
+{
+	return propiedades.end();
 }

@@ -22,4 +22,7 @@ public:
 
 	void agregarEntidad(EntidadAbstracta* entidad);
 	void eliminarEntidad(string nombre);
+
+	vector< Propiedad* >::iterator begin() override;
+	vector< Propiedad* >::iterator end() override;
 };

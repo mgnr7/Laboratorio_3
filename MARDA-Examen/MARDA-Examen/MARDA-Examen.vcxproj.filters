@@ -27,6 +27,9 @@
     <ClCompile Include="EntidadCompuesta.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="SerializadorJSON.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="EntidadAbstracta.h">
@@ -39,6 +42,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="EntidadCompuesta.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SerializadorJSON.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

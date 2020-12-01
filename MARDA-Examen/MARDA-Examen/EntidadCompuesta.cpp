@@ -12,16 +12,6 @@ EntidadCompuesta::EntidadCompuesta(string nombre)
 
 EntidadCompuesta::~EntidadCompuesta()
 {
-	for (auto itr = this->propiedades.begin(); itr != this->propiedades.end(); itr++) {
-		delete* itr;
-	}
-	this->propiedades.clear();
-
-	for (auto itr = this->entidades.begin(); itr != this->entidades.end(); itr++) {
-		delete* itr;
-	}
-	this->entidades.clear();
-
 }
 
 void EntidadCompuesta::setNombre(string nombre)
@@ -97,4 +87,14 @@ void EntidadCompuesta::eliminarEntidad(string nombre)
 			itr = this->entidades.end();
 		}
 	}
+}
+
+vector< Propiedad* >::iterator EntidadCompuesta::begin()
+{
+	return propiedades.begin();
+}
+
+vector< Propiedad* >::iterator EntidadCompuesta::end()
+{
+	return propiedades.end();
 }

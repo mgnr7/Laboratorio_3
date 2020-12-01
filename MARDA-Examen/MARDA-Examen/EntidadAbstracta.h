@@ -21,4 +21,7 @@ public:
 	virtual void modificarPropiedadTipo(string nombrePropiedad, string nuevoTipo) = 0;
 	virtual void modificarPropiedadValor(string nombrePropiedad, string nuevoValor) = 0;
 
+	virtual vector< Propiedad* >::iterator begin() = 0;
+	virtual vector< Propiedad* >::iterator end() = 0;
+
 };
