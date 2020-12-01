@@ -18,9 +18,15 @@
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Propiedad.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="EntidadAbstracta.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Propiedad.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
