@@ -1,7 +1,6 @@
 #pragma once
 #include <unordered_map>
 #include <string>
-#include <iostream>
 #include "EntidadAbstracta.h"
 #include <vector>
 
@@ -13,16 +12,25 @@ private:
 	int cardPrimero;
 	int cardSegundo; //Las cardinalidades actuan como una restriccion al agregar una nueva relacion
 	Mapa* relacion;
-	int contarLlaves(EntidadAbstracta* elemento);
 
 public:
 
 	Relacion(std::string nombreRelacion, unsigned int cardLlave, unsigned int cardValor);
 	~Relacion();
-	void agregarRelacion(EntidadAbstracta* llave, EntidadAbstracta* elemento);
-	void eliminarRelacion(EntidadAbstracta* llave, EntidadAbstracta* elemento);
-	std::vector<EntidadAbstracta*>* getElementos(EntidadAbstracta* llave);
-	std::vector<EntidadAbstracta*>* getLlaves(EntidadAbstracta* elemento);
+	std::string getNombre();
+	Mapa* getRelacion();
+	int getCardPrimero();
+	int getCardSegundo();
+
+	void setNombre(std::string nombre);
+	void setRelacion(Mapa* relacion);
+	void setCardPrimero(int cardPrimero);
+	void setCardSegundo(int cardSegundo);
+
+	int contarLlaves(EntidadAbstracta* elemento);
+
+
+
 
 
 

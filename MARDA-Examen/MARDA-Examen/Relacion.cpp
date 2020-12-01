@@ -1,5 +1,6 @@
 #include "Relacion.h"
 
+
 int Relacion::contarLlaves(EntidadAbstracta* elemento)
 {
 	int cantidad = 0;
@@ -24,44 +25,44 @@ Relacion::~Relacion()
 	delete relacion;
 }
 
-void Relacion::agregarRelacion(EntidadAbstracta* llave, EntidadAbstracta* elemento)
+std::string Relacion::getNombre()
 {
-	//restriccion de las cardinalidades
-	if (relacion->count(llave) < this->cardSegundo && this->contarLlaves(elemento) < this->cardPrimero) {
-		this->relacion->insert(std::pair<EntidadAbstracta*, EntidadAbstracta*>(llave, elemento));
-	}
-	else {
-		std::cerr << "No se pudo agregar la relacion ya que no cumple la restricción de la cardinalidad" << std::endl;
-	}
+	return this->nombre;
 }
 
-void Relacion::eliminarRelacion(EntidadAbstracta* llave, EntidadAbstracta* elemento)
+Relacion::Mapa* Relacion::getRelacion()
 {
-
-	for (auto itr = this->relacion->begin(); itr != this->relacion->end(); itr++) {
-		if (itr->first == llave && itr->second == elemento) {
-			this->relacion->erase(itr);
-			break;
-		}
-	}
+	return this->relacion;
 }
 
-std::vector<EntidadAbstracta*>* Relacion::getElementos(EntidadAbstracta* llave)
+int Relacion::getCardPrimero()
 {
-	std::vector<EntidadAbstracta*>* vector = new std::vector<EntidadAbstracta*>();
-	for (auto itr = this->relacion->begin(); itr != this->relacion->end(); itr++) {
-		if (itr->first == llave)
-			vector->push_back(itr->second);
-	}
-	return vector;
+	return this->cardPrimero;
 }
 
-std::vector<EntidadAbstracta*>* Relacion::getLlaves(EntidadAbstracta* elemento)
+int Relacion::getCardSegundo()
 {
-	std::vector<EntidadAbstracta*>* vector = new std::vector<EntidadAbstracta*>();
-	for (auto itr = this->relacion->begin(); itr != this->relacion->end(); itr++) {
-		if (itr->second == elemento)
-			vector->push_back(itr->first);
-	}
-	return vector;
+	return this->cardSegundo;
 }
+
+void Relacion::setNombre(std::string nombre)
+{
+	this->nombre = nombre;
+}
+
+void Relacion::setRelacion(Mapa* relacion)
+{
+	this->relacion = relacion;
+}
+
+void Relacion::setCardPrimero(int cardPrimero)
+{
+	this->cardPrimero = cardPrimero;
+}
+
+void Relacion::setCardSegundo(int cardSegundo)
+{
+	this->cardSegundo = cardSegundo;
+}
+
+
