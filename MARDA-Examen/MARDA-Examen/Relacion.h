@@ -4,6 +4,7 @@
 #include "EntidadAbstracta.h"
 #include <vector>
 
+
 class Relacion
 {
 private:

@@ -4,10 +4,12 @@
 #include<string>
 #include "EntidadAbstracta.h"
 #include"Relacion.h"
+#include <fstream>
 class ControladorRelaciones
 {
 private:
 	std::vector<Relacion*> vectorRelaciones;
+	ofstream bitacora;
 public:
 	ControladorRelaciones();
 	~ControladorRelaciones();
