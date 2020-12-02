@@ -139,6 +139,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="ControladorDatos.cpp" />
+    <ClCompile Include="Datos.cpp" />
     <ClCompile Include="EntidadCompuesta.cpp" />
     <ClCompile Include="ControladorRelaciones.cpp" />
     <ClCompile Include="EntidadSimple.cpp" />
@@ -149,9 +151,11 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ControladorRelaciones.h" />
+    <ClInclude Include="Datos.h" />
     <ClInclude Include="EntidadAbstracta.h" />
     <ClInclude Include="EntidadCompuesta.h" />
     <ClInclude Include="EntidadSimple.h" />
+    <ClInclude Include="ControladorDatos.h" />
     <ClInclude Include="Propiedad.h" />
     <ClInclude Include="Relacion.h" />
     <ClInclude Include="SerializadorJSON.h" />
