@@ -16,12 +16,12 @@ public:
 	~ControladorRelaciones();
 	void crearRelacion(std::string nombre, unsigned int cardPrimero, unsigned int cardSegundo);
 	void eliminarRelacion(std::string nombre);
-	void modificarRelacion(std::string nombre);
-	void agregarRelacion(Relacion* relacion, EntidadAbstracta* llave, EntidadAbstracta* elemento);
-	void eliminarRelacion(Relacion* relacion, EntidadAbstracta* llave, EntidadAbstracta* elemento);
+	void modificarRelacion(std::string nombreRelacion, std::string nuevoNombreRelacion);
+	void agregarRelacion(std::string nombreRelacion, EntidadAbstracta* llave, EntidadAbstracta* elemento);
+	void eliminarRelacion(std::string nombreRelacion, EntidadAbstracta* llave, EntidadAbstracta* elemento);
 
 	//Para las busquedas
-	std::vector<EntidadAbstracta*>* getElementos(Relacion* relacion, EntidadAbstracta* llave);
-	std::vector<EntidadAbstracta*>* getLlaves(Relacion* relacion, EntidadAbstracta* elemento);
+	std::vector<EntidadAbstracta*>* getElementos(std::string nombreRelacion, EntidadAbstracta* llave);
+	std::vector<EntidadAbstracta*>* getLlaves(std::string nombreRelacion, EntidadAbstracta* elemento);
 };
 

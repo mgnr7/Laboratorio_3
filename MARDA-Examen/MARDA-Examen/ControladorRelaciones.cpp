@@ -40,9 +40,20 @@ void ControladorRelaciones::eliminarRelacion(std::string nombre)
 	}
 }
 
-
-void ControladorRelaciones::agregarRelacion(Relacion* relacion, EntidadAbstracta* llave, EntidadAbstracta* elemento)
+void ControladorRelaciones::modificarRelacion(std::string nombreRelacion, std::string nuevoNombreRelacion)
 {
+	Relacion* relacion = this->getRelacion(nombreRelacion);
+	relacion->setNombre(nuevoNombreRelacion);
+	bitacora.open("Bitacora.txt", ios::app | ios::out);
+	bitacora << "Se modificó el nombre de la relación " << nombreRelacion << " por " << nuevoNombreRelacion << std::endl;
+	bitacora.close();
+
+}
+
+
+void ControladorRelaciones::agregarRelacion(std::string nombreRelacion, EntidadAbstracta* llave, EntidadAbstracta* elemento)
+{
+	Relacion* relacion = this->getRelacion(nombreRelacion);
 	bitacora.open("Bitacora.txt", ios::app | ios::out);
 	//restriccion de las cardinalidades
 	if (relacion->getRelacion()->count(llave) < relacion->getCardSegundo() && relacion->contarLlaves(elemento) < relacion->getCardPrimero()) {
@@ -58,8 +69,9 @@ void ControladorRelaciones::agregarRelacion(Relacion* relacion, EntidadAbstracta
 
 }
 
-void ControladorRelaciones::eliminarRelacion(Relacion* relacion, EntidadAbstracta* llave, EntidadAbstracta* elemento)
+void ControladorRelaciones::eliminarRelacion(std::string nombreRelacion, EntidadAbstracta* llave, EntidadAbstracta* elemento)
 {
+	Relacion* relacion = this->getRelacion(nombreRelacion);
 	bitacora.open("Bitacora.txt", ios::app | ios::out);
 	bool encontrado = false;
 	for (auto itr = relacion->getRelacion()->begin(); itr != relacion->getRelacion()->end(); itr++) {
@@ -78,8 +90,9 @@ void ControladorRelaciones::eliminarRelacion(Relacion* relacion, EntidadAbstract
 	bitacora.close();
 }
 
-std::vector<EntidadAbstracta*>* ControladorRelaciones::getElementos(Relacion* relacion, EntidadAbstracta* llave)
+std::vector<EntidadAbstracta*>* ControladorRelaciones::getElementos(std::string nombreRelacion, EntidadAbstracta* llave)
 {
+	Relacion* relacion = this->getRelacion(nombreRelacion);
 	std::vector<EntidadAbstracta*>* vector = new std::vector<EntidadAbstracta*>();
 	for (auto itr = relacion->getRelacion()->begin(); itr != relacion->getRelacion()->end(); itr++) {
 		if (itr->first == llave)
@@ -88,8 +101,9 @@ std::vector<EntidadAbstracta*>* ControladorRelaciones::getElementos(Relacion* re
 	return vector;
 }
 
-std::vector<EntidadAbstracta*>* ControladorRelaciones::getLlaves(Relacion* relacion, EntidadAbstracta* elemento)
+std::vector<EntidadAbstracta*>* ControladorRelaciones::getLlaves(std::string nombreRelacion, EntidadAbstracta* elemento)
 {
+	Relacion* relacion = this->getRelacion(nombreRelacion);
 	std::vector<EntidadAbstracta*>* vector = new std::vector<EntidadAbstracta*>();
 	for (auto itr = relacion->getRelacion()->begin(); itr != relacion->getRelacion()->end(); itr++) {
 		if (itr->second == elemento)
