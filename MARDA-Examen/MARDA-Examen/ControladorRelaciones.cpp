@@ -2,7 +2,7 @@
 
 Relacion* ControladorRelaciones::getRelacion(std::string nombre)
 {
-	Relacion* resultado;
+	Relacion* resultado = nullptr;
 	for (auto itr = this->vectorRelaciones.begin(); itr != this->vectorRelaciones.end(); itr++) {
 		if ((*itr)->getNombre() == nombre)
 			resultado = *itr;
@@ -22,6 +22,7 @@ ControladorRelaciones::~ControladorRelaciones()
 
 void ControladorRelaciones::crearRelacion(std::string nombre, unsigned int cardPrimero, unsigned int cardSegundo)
 {
+	//cardinalidad 0 = infinito
 	this->vectorRelaciones.push_back(new Relacion(nombre, cardPrimero, cardSegundo));
 	bitacora.open("Bitacora.txt", ios::app | ios::out);
 	bitacora << "Se creó la relación " << nombre << std::endl;
@@ -56,7 +57,7 @@ void ControladorRelaciones::agregarRelacion(std::string nombreRelacion, EntidadA
 	Relacion* relacion = this->getRelacion(nombreRelacion);
 	bitacora.open("Bitacora.txt", ios::app | ios::out);
 	//restriccion de las cardinalidades
-	if (relacion->getRelacion()->count(llave) < relacion->getCardSegundo() && relacion->contarLlaves(elemento) < relacion->getCardPrimero()) {
+	if ((relacion->getRelacion()->count(llave) < relacion->getCardSegundo() || relacion->getCardSegundo() == 0) && relacion->contarLlaves(elemento) < relacion->getCardPrimero() || relacion->getCardPrimero() == 0) {
 		relacion->getRelacion()->insert(std::pair<EntidadAbstracta*, EntidadAbstracta*>(llave, elemento));
 
 		bitacora << "A " << relacion->getNombre() << " se agregó una nueva relación entre " << llave->getNombre()<<" y " << elemento->getNombre()<<"."<<std::endl;

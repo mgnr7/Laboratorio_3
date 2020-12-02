@@ -2,7 +2,7 @@
 
 void* ControladorEntidades::getEntidad(std::string nombre)
 {
-	void* resultado;
+	void* resultado = nullptr;
 	for (auto itr = this->vectorEntidades.begin(); itr != this->vectorEntidades.end(); itr++) {
 		if ((*itr)->getNombre() == nombre)
 			resultado = static_cast<void*>(*itr);
@@ -20,27 +20,30 @@ ControladorEntidades::~ControladorEntidades()
 	this->vectorEntidades.clear();
 }
 
-void ControladorEntidades::crearEntidadSimple(std::string nombreEntidad)
+EntidadSimple*  ControladorEntidades::crearEntidadSimple(std::string nombreEntidad)
 {
-	this->vectorEntidades.push_back(new EntidadSimple(nombreEntidad));
+	EntidadSimple* entidadNueva = new EntidadSimple(nombreEntidad);
+	this->vectorEntidades.push_back(entidadNueva);
 	bitacora.open("Bitacora.txt", ios::app | ios::out);
 	bitacora << "Se creó la entidad simple " << nombreEntidad << std::endl;
 	bitacora.close();
+	return entidadNueva;
 }
 
-void ControladorEntidades::crearEntidadCompuesta(std::string nombreEntidad)
+EntidadCompuesta* ControladorEntidades::crearEntidadCompuesta(std::string nombreEntidad)
 {
-
-	this->vectorEntidades.push_back(new EntidadCompuesta(nombreEntidad));
+	EntidadCompuesta* entidadNueva = new EntidadCompuesta(nombreEntidad);
+	this->vectorEntidades.push_back(entidadNueva);
 	bitacora.open("Bitacora.txt", ios::app | ios::out);
 	bitacora << "Se creó la entidad compuesta " << nombreEntidad << std::endl;
 	bitacora.close();
+	return entidadNueva;
 }
 
 void ControladorEntidades::modificarEntidad(std::string nombreEntidad, std::string nuevoNombreEntidad)
 {
 	bitacora.open("Bitacora.txt", ios::app | ios::out);
-	bitacora << "Se modificó el nombre de la entidad  " << nombreEntidad << " a  " << nuevoNombreEntidad << std::endl;
+	bitacora << "Se modificó el nombre de la entidad  " << nombreEntidad << " por  " << nuevoNombreEntidad << std::endl;
 	bitacora.close();
 }
 
@@ -48,7 +51,7 @@ void ControladorEntidades::agregarPropiedad(std::string nombreEntidad, std::stri
 {
 	
 	bitacora.open("Bitacora.txt", ios::app | ios::out);
-	bitacora << "Se creó la propiedad  " << nombrePropiedad  <<" a la entidad "<< nombreEntidad << std::endl;
+	bitacora << "Se creó la propiedad  " << nombrePropiedad  <<" de tipo " << tipoPropiedad<< " con el valor " <<valorPropiedad<<" en la entidad "<< nombreEntidad << std::endl;
 	bitacora.close();
 }
 

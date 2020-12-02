@@ -16,8 +16,8 @@ private:
 public:
 	ControladorEntidades();
 	~ControladorEntidades();
-	void crearEntidadSimple(std::string nombreEntidad);
-	void crearEntidadCompuesta(std::string nombreEntidad);
+	EntidadSimple* crearEntidadSimple(std::string nombreEntidad);
+	EntidadCompuesta* crearEntidadCompuesta(std::string nombreEntidad);
 	void modificarEntidad(std::string nombreEntidad, std::string nuevoNombreEntidad);
 	void agregarPropiedad(std::string nombreEntidad, std::string nombrePropiedad, std::string tipoPropiedad, std::string valorPropiedad);
 	void eliminarPropiedad(std::string nombreEntidad, std::string nombrePropiedad);
