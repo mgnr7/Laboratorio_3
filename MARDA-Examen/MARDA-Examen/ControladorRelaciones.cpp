@@ -1,12 +1,45 @@
 #include "ControladorRelaciones.h"
 
+Relacion* ControladorRelaciones::getRelacion(std::string nombre)
+{
+	Relacion* resultado;
+	for (auto itr = this->vectorRelaciones.begin(); itr != this->vectorRelaciones.end(); itr++) {
+		if ((*itr)->getNombre() == nombre)
+			resultado = *itr;
+		break;
+	}
+	return resultado;
+}
+
 ControladorRelaciones::ControladorRelaciones()
 {
 }
 
 ControladorRelaciones::~ControladorRelaciones()
 {
+	vectorRelaciones.clear();
 }
+
+void ControladorRelaciones::crearRelacion(std::string nombre, unsigned int cardPrimero, unsigned int cardSegundo)
+{
+	this->vectorRelaciones.push_back(new Relacion(nombre, cardPrimero, cardSegundo));
+	bitacora.open("Bitacora.txt", ios::app | ios::out);
+	bitacora << "Se creó la relación " << nombre << std::endl;
+	bitacora.close();
+}
+
+void ControladorRelaciones::eliminarRelacion(std::string nombre)
+{
+	bitacora.open("Bitacora.txt", ios::app | ios::out);
+	for (auto itr = this->vectorRelaciones.begin(); itr != this->vectorRelaciones.end(); itr++) {
+		if ((*itr)->getNombre() == nombre)
+			vectorRelaciones.erase(itr);
+		delete((*itr));
+		bitacora << "Se eliminó la relación " << nombre << std::endl;
+		bitacora.close();
+	}
+}
+
 
 void ControladorRelaciones::agregarRelacion(Relacion* relacion, EntidadAbstracta* llave, EntidadAbstracta* elemento)
 {

@@ -139,6 +139,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="ControladorEntidades.cpp" />
     <ClCompile Include="EntidadCompuesta.cpp" />
     <ClCompile Include="ControladorRelaciones.cpp" />
     <ClCompile Include="EntidadSimple.cpp" />
@@ -148,6 +149,7 @@
     <ClCompile Include="SerializadorJSON.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="ControladorEntidades.h" />
     <ClInclude Include="ControladorRelaciones.h" />
     <ClInclude Include="EntidadAbstracta.h" />
     <ClInclude Include="EntidadCompuesta.h" />
