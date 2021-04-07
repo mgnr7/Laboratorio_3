@@ -6,7 +6,7 @@ Actividad_Hoja::Actividad_Hoja() : atributos(5)
 	nombre = "";
 	fecha_plan_ini = "2020-09-18";
 	fecha_plan_fin = "2020-09-27";
-	descripcion = "Descripcion generica";
+	descripcion = "Descripcion default";
 
 	atributos["Nombre"] = nombre;
 	atributos["Responsable"] = responsable;
